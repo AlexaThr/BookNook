@@ -17,6 +17,8 @@ userController.getAllUsers = (req, res, next) => {
 }
 
 userController.createUser = async (req, res, next) => {
+    console.log("req.body ==> ", req.body);
+
     try {
         const { username, password } = req.body;
         if (
@@ -26,7 +28,10 @@ userController.createUser = async (req, res, next) => {
         ) {
             return next("Error in userController.createUser: Invalid inputs");
         }
-        res.locals.user = await User.create({ username, password });
+        const newUser = await User.create({ username, password });
+        console.log("newUser ==> ", newUser);
+        res.locals.user = newUser;
+        console.log(res.locals.user);
         return next();
     } catch (err) {
         return next(err.message);
