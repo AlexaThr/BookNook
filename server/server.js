@@ -8,7 +8,7 @@ const userController = require("./controllers/userController");
 const cookieController = require("./controllers/cookieController");
 const sessionController = require("./controllers/sessionController");
 
-const uri = 'your_connection_string'; // Replace with your actual connection string
+const uri = 'mongodb+srv://AlexaThr:DECQSYvO5N6SfYP1@booknookcluster.ym2hlas.mongodb.net/';
 const client = new MongoClient(uri);
 
 async function connectToMongoDB() {
