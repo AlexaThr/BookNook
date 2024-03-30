@@ -8,27 +8,32 @@ const userController = require("./controllers/userController");
 const cookieController = require("./controllers/cookieController");
 const sessionController = require("./controllers/sessionController");
 
-const uri = '***REMOVED***/';
-const client = new MongoClient(uri);
+// const uri = '***REMOVED***/?retryWrites=true&w=majority&appName=BookNookCluster';
+const uri = 'mongodb://localhost:27017';
+// const client = new MongoClient(uri);
 
-async function connectToMongoDB() {
-    try {
-        await client.connect();
-        console.log('Connected to MongoDB');
-    } catch (error) {
-        console.error('Error connecting to MongoDB:', error);
-    }
-}
+// async function connectToMongoDB() {
+//     try {
+//         await client.connect();
+//         console.log('Connected to MongoDB');
+//     } catch (error) {
+//         console.error('Error connecting to MongoDB:', error);
+//     }
+// }
 
 // Call the connectToMongoDB function to establish the connection
-connectToMongoDB();
+// connectToMongoDB();
+
+mongoose.connection.once('open', () => {
+    console.log('Connected to Database');
+});
 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
 
