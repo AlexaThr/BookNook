@@ -8,15 +8,15 @@ const cookieController = require("./controllers/cookieController");
 const sessionController = require("./controllers/sessionController");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-// app.use(express.json());
-// app.use(express.urlencoded());
-// app.use(cookieParser());
-// app.use('/bundle', express.static(path.join(__dirname, '../bundle')));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(cookieParser());
+app.use('/bundle', express.static(path.join(__dirname, '../bundle')));
 
 
-app.get('/', cookieController.setCookie, (req, res) => {
+app.get('/login', cookieController.setCookie, (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client/login.html'))
 })
 
