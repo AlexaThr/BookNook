@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 
 module.exports = {
     mode: 'development',
-    entry: '/client/index.js',
+    entry: './client/index.js',
     output: {
         path: path.resolve(__dirname, 'bundle'),
         filename: 'bundle.js',
@@ -48,9 +48,11 @@ module.exports = {
         })
     ],
     devServer: {
-        static: {
-            publicPath: '/',
-            directory: path.resolve(__dirname),
-        }
-    }
+        proxy: [{
+            context: '/',
+                target: 'http://localhost:3000', // Proxy requests to Express server
+                changeOrigin: true,
+                secure: false
+            }]
+    },
 };

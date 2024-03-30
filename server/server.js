@@ -2,10 +2,27 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const { MongoClient } = require('mongodb');
 
 const userController = require("./controllers/userController");
 const cookieController = require("./controllers/cookieController");
 const sessionController = require("./controllers/sessionController");
+
+const uri = 'your_connection_string'; // Replace with your actual connection string
+const client = new MongoClient(uri);
+
+async function connectToMongoDB() {
+    try {
+        await client.connect();
+        console.log('Connected to MongoDB');
+    } catch (error) {
+        console.error('Error connecting to MongoDB:', error);
+    }
+}
+
+// Call the connectToMongoDB function to establish the connection
+connectToMongoDB();
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,7 +30,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cookieParser());
-app.use('/bundle', express.static(path.join(__dirname, '../bundle')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 
 app.get('/login', cookieController.setCookie, (req, res) => {
