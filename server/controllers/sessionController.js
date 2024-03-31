@@ -6,12 +6,12 @@ sessionController.isLoggedIn = async (req, res, next) => {
     try {
         const { ssid } = req.cookies;
 
-        const userSession = await Session.findOne({ ssid });
-
-        if (!userSession) {
-            return res.status(404).redirect("/signup");
+        const userSession = await Session.findOne({cookieId: ssid});
+        console.log("userSession ===> ", userSession," ", Boolean(userSession));
+        if (userSession.length !== 0) {
+            return next();
         }
-        return next();
+        return res.status(404).redirect("/signup");
     } catch (err) {
         return next(err.message);
     }
