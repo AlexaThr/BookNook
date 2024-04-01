@@ -23,27 +23,31 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
 
 // Define routes
-app.get('/login', cookieController.setCookie, (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/login.html'));
-});
+// app.get('/login', cookieController.setCookie, (req, res) => {
+//   res.sendFile(path.resolve(__dirname, '../client/login.html'));
+// });
 
-app.get('/signup', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/signup.html'));
-});
+// app.get('/signup', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, '../client/signup.html'));
+// });
 
-app.post('/signup', userController.createUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
-  res.status(200).redirect('/home');
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../bundle'))
+})
+
+app.post('/signup', userController.createUser, (req, res) => {
+  res.status(200).redirect('/');
 });
 
 app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
-  res.status(200).redirect('/home');
+  res.status(200).redirect('/');
 });
 
-app.get('/home', 
-    sessionController.isLoggedIn, 
-    (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../client/loggedin.html'));
-    });
+// app.get('/', 
+//     sessionController.isLoggedIn, 
+//     (req, res) => {
+//         res.sendFile(path.resolve(__dirname, '../bundle/index.html'));
+// });
 
 // Handle 404 Not Found errors
 app.use('*', (req, res) => {
