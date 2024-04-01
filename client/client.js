@@ -1,1 +1,1 @@
-import "../client/css/styles.css";
+import "./css/styles.css";
