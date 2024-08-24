@@ -44,7 +44,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html',
+            template: './index.html',
         })
     ],
     devServer: {
@@ -55,4 +55,5 @@ module.exports = {
                 secure: false
             }]
     },
+    devtool: 'source-map',
 };

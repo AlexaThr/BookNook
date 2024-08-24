@@ -2,7 +2,7 @@
 // We are creating accounts and pushing them to the database (createUser)
 // We are signing in when the account corresponds to a user in the database (verifyUser)
 
-const User = require("../models/userModel");
+const { User } = require("../models/userModel");
 
 const userController = {};
 
@@ -43,15 +43,40 @@ userController.verifyUser = async (req, res, next) => {
         const { username, password } = req.body;
 
         const user = await User.findOne({ username });
-        if (!user) return res.status(404).redirect("/signup");
+        if (!user) return res.status(404).redirect("/login");
 
         const auth = await user.verifyPass(password);
-        if (!auth) return res.status(401).redirect("/signup");
+        if (!auth) return res.status(401).redirect("/login");
 
         res.locals.user = user;
         return next();
     } catch (err) {
         return next(err.message);
+    }
+};
+
+userController.addToReadingList = async (req, res, next) => {
+    try {
+        const { userId, bookId } = req.body;
+
+        // Find the user by ID
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Check if the book is already in the user's reading list
+        if (user.books.includes(bookId)) {
+            return res.status(400).json({ message: 'Book already in reading list' });
+        }
+
+        // Add the book to the user's reading list
+        user.books.push(bookId);
+        await user.save();
+
+        return res.status(200).json({ message: 'Book added to reading list successfully' });
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
     }
 };
 

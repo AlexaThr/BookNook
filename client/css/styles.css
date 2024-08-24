@@ -23,7 +23,7 @@ body {
 /* Adjust the padding or margin of the content below the header */
 body .content {
   height: 100vh;
-  /* padding-top: 120px; */
+  padding-top: 50px;
 }
 
 
@@ -63,6 +63,7 @@ form {
 h2 {
   /* margin-bottom: 10px; */
   color: #555;
+  font-family: "Poppins"
 }
 
 input[type="text"],
@@ -126,23 +127,139 @@ button:hover {
 
 
 
+/* styles.css */
+
+.category h2 {
+  padding-left: 50px;
+}
+
+.netflix-row {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 10px; /*Add space between items*/
+  /* padding: 20px; Add padding to the row */
+  width: 100%;
+  /* You can add additional styles as needed */
+  /* padding-left: px; */
+  /* background-color: #f4d486; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
 
 
+}
+
+.netflix-row::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for a cleaner look */
+}
+
+.book-list {
+  display: inline-flex; /* or display: inline-flex */
+  font-family: "Poppins";
+  /* height: 2448px; */
+  unicode-bidi: isolate;
+  width: 210px;
+  padding: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
 
 
+/* .book-item {
+  flex: 0 0 auto;
+  /* padding: 10px; */
+  /* width: 200px; */
+  /* border: 1px solid #ccc;
+  border-radius: 5px; */
+  /* margin-right: 10px;
+} */
+
+.book-item {
+  position: relative;
+  display: flex; 
+  align-items: flex-start;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-family: "Poppins";
+  height: 175px;
+  /* padding: 30px; */
+  margin-right: 40px;
+  unicode-bidi: isolate;
+  width: 125px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+
+}
 
 
-/* .button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #007bff; /* Example button color */
-    /* color: #fff;
-    text-decoration: none; /* Remove underline */
-    /* border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  } */
-  
-  /* .button:hover {
-    background-color: #0056b3; /* Example hover color */
-  /* } */
+.book-item img {
+  width: 125px;
+  height: 175px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+
+  /* margin-right: 50px; */
+}
+
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #f4d486;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+  width: 115px;
+  height: 165px;
+  transform: translate-Y(100%);
+  opacity: 0;
+  margin: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  /* font-family: "Poppins"; */
+}
+
+.book-item:hover .book-details {
+  transform: translate-Y(0);
+  opacity: 0.91;
+}
+
+.book-details h4 {
+  margin-top: 40px;
+  margin-bottom: auto;
+  /* margin-right: 15px; */
+  font-size: 16px;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* align-self: center; */
+  /* white-space: nowrap; */
+  max-width: 100%;
+}
+
+.book-details p {
+  margin: 0;
+  font-size: 10px;
+  color: #555;
+  padding: 0;
+}
+
+.add {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  align-self: flex-end;
+  background-color: transparent;
+  font-size: 20px;
+  color: black;
+  border: 0;
+  margin: 0;
+  padding: 10;
+  margin-right: 0.5rem;
+}
+
+
+.add:hover {
+  background-color: #e0b341;
+}
