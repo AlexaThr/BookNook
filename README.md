@@ -1,6 +1,6 @@
 # BookNook
 
-**BookNook** is a simple and elegant app that allows users to add books to their reading lists. It features a clean design and intuitive interface for managing your reading journey.
+**BookNook** is a simple and elegant app that allows users to add books to their reading lists.
 
 ![BookNook Interface](./client/assets/Homepage.png)
 
@@ -31,7 +31,6 @@
 Here are some planned upgrades:
 
 - 🏆 **Achievements & Goals:** Set reading goals and celebrate your accomplishments.
-- 📖 **Completed List:** Organize your finished books into a separate list.
 - 🤖 **AI-Driven Recommendations:** Receive book suggestions tailored to your preferences.
 - 🛠 **Enhanced Reading List:** Addressing minor bugs to ensure smoother functionality.
 
