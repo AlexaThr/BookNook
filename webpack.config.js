@@ -50,7 +50,7 @@ module.exports = {
     devServer: {
         proxy: [{
             context: '/',
-                target: 'http://localhost:3000', // Proxy requests to Express server
+                target: 'http://localhost:3000',
                 changeOrigin: true,
                 secure: false
             }]

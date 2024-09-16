@@ -1,7 +1,3 @@
-// api.js
-
-const API = '***REMOVED***';
-
 export const fetchBooks = async (searchTerm) => {
     try {
       const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(searchTerm)}`);

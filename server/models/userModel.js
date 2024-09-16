@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// import Book from "../../client/Models/bookModel";
 const Schema = mongoose.Schema;
 
 const SALT_WORK_FACTOR = 10;

@@ -59,18 +59,15 @@ userController.addToReadingList = async (req, res, next) => {
     try {
         const { userId, bookId } = req.body;
 
-        // Find the user by ID
         const user = await User.findById(userId);
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        // Check if the book is already in the user's reading list
         if (user.books.includes(bookId)) {
             return res.status(400).json({ message: 'Book already in reading list' });
         }
 
-        // Add the book to the user's reading list
         user.books.push(bookId);
         await user.save();
 

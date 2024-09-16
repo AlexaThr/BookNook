@@ -20,7 +20,6 @@ body {
   padding: 0;
 }
 
-/* Adjust the padding or margin of the content below the header */
 body .content {
   height: 100vh;
   padding-top: 50px;
@@ -36,7 +35,7 @@ body .content {
 } */
 
 .form-container {
-  height: 100vh; /* Adjust the percentage as needed */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,7 +87,7 @@ button:hover {
 
 .header {
   display: flex;
-  align-items: center; /* Center vertically */
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -102,8 +101,8 @@ button:hover {
 
 .tabs {
   display: flex;
-  align-items: center; /* Align tabs to the top */
-  margin-top: 10px; /* Add some space from the top */
+  align-items: center;
+  margin-top: 10px;
   margin-right: 10px;
   margin-left: auto;
 }
@@ -118,16 +117,12 @@ button:hover {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-bottom: 0; /* Remove any bottom margin */
+  margin-bottom: 0;
 }
 
 .tab:hover {
   background-color: #e0b341;
 }
-
-
-
-/* styles.css */
 
 .category h2 {
   padding-left: 50px;
@@ -136,24 +131,23 @@ button:hover {
 .netflix-row {
   display: flex;
   flex-direction: row;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  gap: 10px; /*Add space between items*/
-  /* padding: 20px; Add padding to the row */
+  overflow-x: auto;
+  gap: 10px;
+  /* padding: 20px; */
   width: 100%;
-  /* You can add additional styles as needed */
   /* padding-left: px; */
   /* background-color: #f4d486; */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 
 }
 
 .netflix-row::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for a cleaner look */
+  display: none;
 }
 
 .book-list {
-  display: inline-flex; /* or display: inline-flex */
+  display: inline-flex;
   font-family: "Poppins";
   /* height: 2448px; */
   unicode-bidi: isolate;
@@ -186,7 +180,7 @@ button:hover {
   margin-right: 40px;
   unicode-bidi: isolate;
   width: 125px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -194,7 +188,7 @@ button:hover {
 .book-item img {
   width: 125px;
   height: 175px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   /* margin-right: 50px; */
 }
@@ -208,7 +202,7 @@ button:hover {
   position: absolute;
   background-color: #f4d486;
   padding: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 115px;
   height: 165px;
   transform: translate-Y(100%);

@@ -1,23 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, useNavigate } from 'react-router-dom'; // Import BrowserRouter and useNavigate
-import '../css/styles.css'; // Import your CSS file
+import { BrowserRouter as Router, useNavigate } from 'react-router-dom';
+import '../css/styles.css';
 
 const HeaderAfterLogin = () => {
     const navigate = useNavigate();
 
-    // Event handler for navigating to My Reading List page
     const handleReadingListClick = () => {
-        navigate('/reading-list'); // Redirect to reading list page
+        navigate('/reading-list');
     };
 
-    // Event handler for navigating to My Achievements page
     const handleAchievementsClick = () => {
-        navigate('/achievements'); // Redirect to achievements page
+        navigate('/achievements');
     };
 
-    // Event handler for navigating to Search page
     const handleSearchClick = () => {
-        navigate('/search'); // Redirect to search page
+        navigate('/search');
     };
 
     const handleHomepage = () => {
