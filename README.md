@@ -18,7 +18,7 @@
 1. **Log In:**
    ![Log In Screenshot](./client/assets/LoginForm.png)
 
-2. **Homepage:**
+2. **Homepage & Hovering/Adding:**
    ![Homepage Screenshot](./client/assets/Homepage.png)
 
 3. **Reading List:**
@@ -28,7 +28,7 @@
 
 ## Areas for Improvement
 
-Though BookNook works as intended, here are some planned upgrades:
+Here are some planned upgrades:
 
 - 🏆 **Achievements & Goals:** Set reading goals and celebrate your accomplishments.
 - 📖 **Completed List:** Organize your finished books into a separate list.
