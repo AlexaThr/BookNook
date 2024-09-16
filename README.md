@@ -2,7 +2,7 @@
 
 **BookNook** is a simple and elegant app that allows users to add books to their reading lists. It features a clean design and intuitive interface for managing your reading journey.
 
-![BookNook Interface](./assets/Homepage.png)
+![BookNook Interface](./client/assets/Homepage.png)
 
 > **Note**: The app is still a work in progress.
 
@@ -16,13 +16,13 @@
 ### Screenshots
 
 1. **Log In:**
-   ![Log In Screenshot](./assets/LoginForm.png)
+   ![Log In Screenshot](./client/assets/LoginForm.png)
 
 2. **Homepage:**
-   ![Homepage Screenshot](./assets/Homepage.png)
+   ![Homepage Screenshot](./client/assets/Homepage.png)
 
 3. **Reading List:**
-   ![Reading List Screenshot](./assets/ReadingList.png)
+   ![Reading List Screenshot](./client/assets/ReadingList.png)
 
 ---
 
