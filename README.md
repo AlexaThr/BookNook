@@ -26,16 +26,6 @@
 
 ---
 
-## Areas for Improvement
-
-Here are some planned upgrades:
-
-- 🏆 **Achievements & Goals:** Set reading goals and celebrate your accomplishments.
-- 🤖 **AI-Driven Recommendations:** Receive book suggestions tailored to your preferences.
-- 🛠 **Enhanced Reading List:** Addressing minor bugs to ensure smoother functionality.
-
----
-
 ## Contributing
 
 Feel free to submit pull requests or issues. All contributions are welcome!
